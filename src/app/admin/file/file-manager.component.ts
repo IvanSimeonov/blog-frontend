@@ -16,6 +16,10 @@ export class FileManagerComponent implements OnInit , OnDestroy {
   blogFiles: Array<BlogFile>;
   id: string;
   subscriptions: Array<Subscription> = [];
+  idToDelete: number;
+  timer: number;
+
+
 
   constructor(private activatedRoute: ActivatedRoute, private fileService: AbstractFileService) { }
 
@@ -49,8 +53,22 @@ export class FileManagerComponent implements OnInit , OnDestroy {
     this.fileService.selectFile(this.id, file);
   }
 
+  onTrashClick(id: string) {
+    this.idToDelete = +id;
+    this.timer = window.setTimeout(() => {
+      this.disableTimer();
+    }, 2000);
+  }
+
+  private disableTimer() {
+    this.idToDelete = null;
+    window.clearTimeout(this.timer);
+    this.timer = null;
+  }
+
   deleteFile(file: BlogFile) {
     this.fileService.deleteFile(file).subscribe(status => {
+      // this.disableTimer();
       if (status) {
         console.log('FILE DELETED', file);
         let indexToDelete = -1;
