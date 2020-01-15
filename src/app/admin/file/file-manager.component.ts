@@ -10,7 +10,7 @@ import { FilePage } from '../../api/file-page';
   templateUrl: './file-manager.component.html',
   styleUrls: ['./file-manager.component.css']
 })
-export class FileManagerComponent implements OnInit , OnDestroy { 
+export class FileManagerComponent implements OnInit , OnDestroy {
   @Input() selectable = false;
 
   blogFiles: Array<BlogFile>;
@@ -18,6 +18,7 @@ export class FileManagerComponent implements OnInit , OnDestroy {
   subscriptions: Array<Subscription> = [];
   idToDelete: number;
   timer: number;
+  // tslint:disable-next-line: comment-format
   //blogFilePage: FilePage;
   // blogFile: BlogFile;
   currentPage = 0;
@@ -31,7 +32,7 @@ export class FileManagerComponent implements OnInit , OnDestroy {
 
   ngOnInit() {
 
-   
+
 
     // this.subscriptions.push(this.fileService.getFiles().subscribe(blogFile => {
     //   this.blogFile = this.blogFile;
@@ -47,7 +48,7 @@ export class FileManagerComponent implements OnInit , OnDestroy {
         }
       })
     );
-    
+
 
     this.fileService.getFileUploaded$().subscribe(newFile => {
       this.blogFiles.unshift(newFile);
@@ -98,9 +99,10 @@ export class FileManagerComponent implements OnInit , OnDestroy {
     });
   }
 
-  onClickPage(page: number){
+  onClickPage(page: number) {
     this.fileService.getFilePage(page).subscribe(blogFilePage => {
-      //this.blogFilePage = blogFilePage;
+      this.blogFiles = blogFilePage.blogFiles;
+      this.currentPage = blogFilePage.pageNumber;
     });
   }
 }
