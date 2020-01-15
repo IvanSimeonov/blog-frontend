@@ -11,6 +11,7 @@ import { PageViewComponent } from './page-view/page-view.component';
 import { ServerErrorComponent } from './server-error/server-error.component';
 import { LogoutComponent } from './logout/logout.component';
 import { ArticlePaginationComponent } from './article-pagination/article-pagination.component';
+import { RxjsDemoComponent } from './rxjs-demo/rxjs-demo.component';
 
 @NgModule({
   imports: [
@@ -26,7 +27,8 @@ import { ArticlePaginationComponent } from './article-pagination/article-paginat
     PageViewComponent,
     ServerErrorComponent,
     LogoutComponent,
-    ArticlePaginationComponent
+    ArticlePaginationComponent,
+    RxjsDemoComponent
   ]
 })
 export class PublicSiteModule { }

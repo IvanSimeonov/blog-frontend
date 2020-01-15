@@ -278,6 +278,7 @@ declare namespace Keycloak {
 		session_state?: string;
 		realm_access?: KeycloakRoles;
 		resource_access?: KeycloakResourceAccess;
+		preferred_username?: string;
 	}
 
 	interface KeycloakResourceAccess {

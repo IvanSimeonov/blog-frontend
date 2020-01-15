@@ -29,7 +29,7 @@ const routes: Routes = [
           path: 'pages', canLoad: [AccessGuard], loadChildren: () => import('./../page-management/page-management.module').then(m => m.PageManagementModule),
         },
         {
-          path: 'file-manager', canLoad: [AccessGuard], component: FileManagerComponent, resolve: { blogFileCollection: BlogFileCollectionResolveService}
+          path: 'file-manager', canLoad: [AccessGuard], component: FileManagerComponent, resolve: { filePage: BlogFileCollectionResolveService}
         },
         {
           path: 'snippets', loadChildren: () => import('./../snippet-management/snippet-management.module').then(m => m.SnippetManagementModule)

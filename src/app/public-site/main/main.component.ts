@@ -19,6 +19,7 @@ export class MainComponent implements OnInit, OnDestroy {
   username: string = null;
   profile: KeycloakTokenParsed = null;
 
+
   canUserCreateArticles = false;
   showOwnArticles = false;
   canUserPublishArticles = false;
@@ -40,7 +41,7 @@ export class MainComponent implements OnInit, OnDestroy {
     console.log('MAIN COMPONENT CREATED!');
 
     this.subscriptions.push(
-      this.routingService.currentUrl$.subscribe(url => {this.currentUrl = url})
+      this.routingService.currentUrl$.subscribe(url => {this.currentUrl = url; })
     );
 
     this.subscriptions.push(

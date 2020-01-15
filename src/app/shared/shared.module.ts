@@ -6,9 +6,10 @@ import { SnippetCollectionResolveService } from './snippet/snippet-collection-re
 import { HtmlEditorComponent } from './html-editor/html-editor.component';
 import { RouterModule } from '@angular/router';
 import { MaddobLibModule } from 'maddob-lib';
+import { ArticlePaginationComponent } from './article-pagination/article-pagination.component';
 
 @NgModule({
-  declarations: [HtmlEditorComponent],
+  declarations: [HtmlEditorComponent, ArticlePaginationComponent],
   imports: [
     CommonModule,
     RouterModule,
@@ -19,6 +20,6 @@ import { MaddobLibModule } from 'maddob-lib';
     SnippetResolveService,
     SnippetCollectionResolveService
   ],
-  exports: [HtmlEditorComponent]
+  exports: [HtmlEditorComponent, ArticlePaginationComponent]
 })
 export class SharedModule { }

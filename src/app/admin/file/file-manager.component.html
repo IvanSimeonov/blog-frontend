@@ -2,6 +2,8 @@
 <div class="uk-container">
     <app-file-upload></app-file-upload>
 </div>
+<app-article-pagination [totalPages]="totalPages" [currentPage]="currentPage" (pageRequested)="onClickPage($event)">
+</app-article-pagination>
 <div class="uk-container">
     <div class="uk-grid uk-grid-small">
         <div *ngFor="let file of blogFiles;  let index = index;"

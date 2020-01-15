@@ -1,0 +1,10 @@
+<div *ngIf="totalPages > 1" >
+    <ul class="uk-pagination uk-flex-center">
+        <li [ngClass]="{'uk-disabled': currentPage === 0}"><a (click)="loadPage(currentPage - 1)"><span uk-pagination-previous></span></a></li>
+        <li *ngFor="let i of pages; let idx = index" [ngClass]="{'uk-active' : currentPage === idx}">
+            <a (click)="loadPage(idx)">{{i + idx}}</a>
+            
+        </li>
+        <li [ngClass]="{'uk-disabled': currentPage === totalPages - 1}"><a (click)="loadPage(currentPage + 1)"><span uk-pagination-next></span></a></li>
+    </ul>
+</div>

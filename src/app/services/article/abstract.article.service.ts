@@ -6,7 +6,7 @@ import { ArticlePage } from '../../api/article-page';
 
 /**
  * Abstract class for article services
- * 
+ *
  * Defines the necessary functions all article services shall adhere to
  */
 @Injectable()
